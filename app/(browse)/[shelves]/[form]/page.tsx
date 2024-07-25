@@ -12,8 +12,8 @@ const Page = () => {
         <div className="">
           <Image
             className="w-full h-auto mx-auto"
-            src={currentForm.image}
-            alt={currentForm.title}
+            src={currentForm?.image}
+            alt={currentForm?.title}
             width={200}
             height={200}
             style={{ width: "auto", height: "auto" }}
@@ -28,16 +28,16 @@ const Page = () => {
             {currentForm?.authors?.length > 0 && (
               <div className={"flex flex-row items-center gap-x-2"}>
                 By
-                {currentForm?.authors?.map((item, index) => (
+                {currentForm?.authors?.map((item: any, index: number) => (
                   <p key={index} className="italic text-sm">
-                    {item.name}{" "}
+                    {item.name}
                   </p>
                 ))}
               </div>
             )}
             <div className="text-sm italic text-red-500">
-              {currentForm?.price?.amount}{" "}
-              <span>{currentForm?.price?.currency}</span>{" "}
+              {currentForm?.price?.amount}
+              <span>{currentForm?.price?.currency}</span>
             </div>
           </div>
         </div>

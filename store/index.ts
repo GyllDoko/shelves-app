@@ -3,12 +3,12 @@ import { create } from "zustand";
 
 interface StoreProps {
   displayList: boolean
-  shelvesList: object[]
-  shelvesSearchList: object[]
-  currentForm: object
+  shelvesList: any
+  shelvesSearchList: any
+  currentForm: any
   getShelvesData: ()=> void
   changeDisplayList: ()=> void
-  setCurrentForm: (form: object)=> void
+  setCurrentForm: (form: any)=> void
   saveShelf: any
 }
 

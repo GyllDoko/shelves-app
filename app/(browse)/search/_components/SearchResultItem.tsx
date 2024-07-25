@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import React from "react"
 
-const SearchResultItem = ({ item }: { item: object }) => {
+const SearchResultItem = ({ item }: { item: any }) => {
   return (
     <div className={"m-2 flex flex-col"}>
       <div className="">
@@ -26,7 +26,7 @@ const SearchResultItem = ({ item }: { item: object }) => {
               className={"flex flex-row items-center gap-x-2 justify-center"}
             >
               By
-              {item?.authors.map((item, index) => (
+              {item?.authors.map((item: any, index: number) => (
                 <p key={index} className="italic text-sm">
                   {item.name}{" "}
                 </p>

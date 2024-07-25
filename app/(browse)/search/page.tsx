@@ -13,13 +13,13 @@ interface SearchPageProps {
 
 const Page = ({ searchParams }: SearchPageProps) => {
   const { shelvesSearchList } = useGlobalStore()
-  const [data, setData] = useState([])
+  const [data, setData] = useState<any>([])
   if (!searchParams.term) {
     redirect("/")
   }
 
   useEffect(() => {
-    const result = findObjectByTitle(shelvesSearchList, searchParams.term)
+    const result: any = findObjectByTitle(shelvesSearchList, searchParams?.term)
     setData([...result])
   }, [searchParams.term, shelvesSearchList])
 
@@ -35,7 +35,7 @@ const Page = ({ searchParams }: SearchPageProps) => {
           </div>
         )}
         {data.length > 0 &&
-          data.map((item, index) => (
+          data.map((item: any, index: number) => (
             <SearchResultItem key={index} item={item} />
           ))}
       </div>

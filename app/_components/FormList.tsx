@@ -6,7 +6,7 @@ import { useGlobalStore } from "@/store"
 import qs from "query-string"
 import { useRouter } from "next/navigation"
 
-const FormList = ({ formids }: { formids: object[] }) => {
+const FormList = ({ formids }: { formids: any[] }) => {
   const { displayList, changeDisplayList } = useGlobalStore()
   const [searchValue, setSearchValue] = useState("")
   const router = useRouter()

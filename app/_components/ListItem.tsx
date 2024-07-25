@@ -8,7 +8,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useGlobalStore } from "@/store"
 
-const ListItem = ({ formId }: { formId: object }) => {
+const ListItem = ({ formId }: { formId: any }) => {
   const [mounted, setMounted] = useState(true)
   const [isPending, startTransition] = useTransition()
   const [form, setForm] = useState(formId)
@@ -61,7 +61,7 @@ const ListItem = ({ formId }: { formId: object }) => {
                     }
                   >
                     By
-                    {form?.authors.map((item, index) => (
+                    {form?.authors.map((item: any, index: number) => (
                       <p key={index} className="italic text-sm">
                         {item.name}{" "}
                       </p>

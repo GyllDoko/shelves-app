@@ -16,7 +16,7 @@ const Sidebar = () => {
 
   return (
     <div className="fixed flex flex-col justify-center mt-[100px]">
-      {shelvesList?.map((item, index) => (
+      {shelvesList?.map((item: any, index: number) => (
         <div key={index}>
           <Link
             className={pathname === `/${item?.slug}` ? "underline" : ""}

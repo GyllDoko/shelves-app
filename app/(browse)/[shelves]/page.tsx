@@ -16,7 +16,9 @@ const Page = ({ params }: ShelvesPageProps) => {
 
   const getShelfId = useCallback(() => {
     if (shelvesList.length > 0) {
-      const shelf = shelvesList.filter((item) => item.slug === params.shelves)
+      const shelf = shelvesList.filter(
+        (item: any) => item.slug === params.shelves
+      )
       return shelf[0].id
     }
   }, [params.shelves, shelvesList])
@@ -24,7 +26,7 @@ const Page = ({ params }: ShelvesPageProps) => {
   useEffect(() => {
     startTransition(async () => {
       const id = getShelfId()
-      const formsIdsFetch = await getFormsId(id)
+      const formsIdsFetch: any = await getFormsId(id)
       setFormIds(formsIdsFetch)
       saveShelf(formsIdsFetch)
     })
